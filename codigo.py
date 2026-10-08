@@ -21,6 +21,8 @@ st.write("Converse com um assistente desenvolvido em Python e inteligência arti
 if not "lista_mensagens" in st.session_state:
     st.session_state["lista_mensagens"] = []
 
+mensagem_usuario = st.chat_input("Escreva sua mensagem aqui")
+
 if not st.session_state["lista_mensagens"]:
     st.markdown("""
     **Olá! 👋**
@@ -36,7 +38,7 @@ if not st.session_state["lista_mensagens"]:
 
     with col2:
         pergunta3 = st.button("Como o Python pode ser usado no marketing?")
-
+        
 if pergunta1:
     mensagem_usuario = "O que é CRM?"
 
@@ -47,7 +49,6 @@ elif pergunta3:
     mensagem_usuario = "Como o Python pode ser usado no marketing?"
 
 
-mensagem_usuario = st.chat_input("Escreva sua mensagem aqui")
 
 for mensagem in st.session_state["lista_mensagens"]:
     quem_enviou = mensagem["role"]
