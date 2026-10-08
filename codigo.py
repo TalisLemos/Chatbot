@@ -14,8 +14,8 @@ from openai import OpenAI
 modelo_ia = OpenAI(api_key=st.secrets["GEMINI_API_KEY"],
                    base_url="https://generativelanguage.googleapis.com/v1beta/openai")
 
-st.title("Assistente Virtual com IA")
-st.write("Converse com um assistente virtual desenvolvido em Python e integrado a um modelo de inteligência artificial.")
+st.title("Chatbot Inteligente")
+st.write("Chatbot com IA em tempo real, criado em Python e Streamlit por Talita Lemos.")
 
 # criar historico de mensagems
 if not "lista_mensagens" in st.session_state:
@@ -66,9 +66,10 @@ if mensagem_usuario:
     st.session_state["lista_mensagens"].append(mensagem2)
 
 
-# manter o histórico (criar memoria)
-
-
-# tornar as respostas inteligentes
+# Rodape
+st.caption(
+    "Demo de portfólio por Talita Lemos · Respostas geradas por IA, "
+    "podem conter imprecisões · [LinkedIn](https://www.linkedin.com/in/talitalemos/)"
+)
 
 
