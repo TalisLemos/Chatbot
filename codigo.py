@@ -11,18 +11,18 @@
 import streamlit as st
 from openai import OpenAI
 
+modelo_ia = OpenAI(
+    api_key=st.secrets["GEMINI_API_KEY"],
+    base_url="https://generativelanguage.googleapis.com/v1beta/openai"
+)
+
 
 SYSTEM_PROMPT = """
 Você é um assistente especializado em explicar como Python pode ser aplicado ao marketing,
 automação, CRM e análise de dados.
 """
 
-resposta_modelo = modelo_ia.chat.completions.create(
-    messages=[
-        {"role": "system", "content": SYSTEM_PROMPT}
-    ] + st.session_state["lista_mensagens"],
-    model="gemini-flash-lite-latest"
-)
+
 
 st.title("Chatbot Inteligente")
 st.write("Chatbot com IA em tempo real, criado em Python e Streamlit por Talita Lemos.")
@@ -64,9 +64,11 @@ if mensagem_usuario:
     # pegar a resposta da IA
     with st.spinner("O assistente está pensando..."):
         resposta_modelo = modelo_ia.chat.completions.create(
-            messages=st.session_state["lista_mensagens"],
+            messages=[
+                {"role": "system", "content": SYSTEM_PROMPT}
+            ] + st.session_state["lista_mensagens"],
             model="gemini-flash-lite-latest"
-        )
+        )    
 
     resposta_ia = resposta_modelo.choices[0].message.content
 
