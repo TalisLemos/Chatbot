@@ -23,6 +23,10 @@ if not "lista_mensagens" in st.session_state:
 
 mensagem_usuario = st.chat_input("Escreva sua mensagem aqui")
 
+pergunta1 = False
+pergunta2 = False
+pergunta3 = False
+
 if not st.session_state["lista_mensagens"]:
     st.markdown("""
     **Olá! 👋**
