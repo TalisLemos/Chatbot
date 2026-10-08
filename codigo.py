@@ -32,15 +32,10 @@ if not st.session_state["lista_mensagens"]:
     Faça uma pergunta para começar a conversa.
     """)
 
-    col1 = st.columns(1)
+    pergunta1 = st.button("Como o Python pode ser usado no marketing?")
 
-    with col1:
-        pergunta1 = st.button("Como o Python pode ser usado no marketing?")
-        
 if pergunta1:
     mensagem_usuario = "Como o Python pode ser usado no marketing?"
-
-
 
 for mensagem in st.session_state["lista_mensagens"]:
     quem_enviou = mensagem["role"]
