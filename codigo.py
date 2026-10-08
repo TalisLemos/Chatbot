@@ -11,6 +11,18 @@
 import streamlit as st
 from openai import OpenAI
 
+
+# Estilo OpenAI (e compatíveis): o system entra como primeira mensagem
+messages = [{"role": "system", "content": SYSTEM_PROMPT}] + st.session_state.messages
+
+# Estilo Anthropic: o system é um parâmetro separado
+response = client.messages.create(
+    model="...",
+    system=SYSTEM_PROMPT,
+    messages=st.session_state.messages,
+    max_tokens=400,
+)
+
 modelo_ia = OpenAI(api_key=st.secrets["GEMINI_API_KEY"],
                    base_url="https://generativelanguage.googleapis.com/v1beta/openai")
 
