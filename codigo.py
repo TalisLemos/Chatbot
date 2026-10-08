@@ -15,7 +15,7 @@ modelo_ia = OpenAI(api_key=st.secrets["GEMINI_API_KEY"],
                    base_url="https://generativelanguage.googleapis.com/v1beta/openai")
 
 st.title("Assistente Virtual com IA")
-st.write("Converse com um assistente desenvolvido em Python e inteligência artificial.")
+st.write("Converse com um assistente virtual desenvolvido em Python e integrado a um modelo de inteligência artificial.")
 
 # criar historico de mensagems
 if not "lista_mensagens" in st.session_state:
@@ -32,10 +32,10 @@ if not st.session_state["lista_mensagens"]:
     Faça uma pergunta para começar a conversa.
     """)
 
-    pergunta1 = st.button("Como o Python pode ser usado no marketing?")
+    pergunta1 = st.button("Como posso usar Python no marketing?")
 
 if pergunta1:
-    mensagem_usuario = "Como o Python pode ser usado no marketing?"
+    mensagem_usuario = "Como posso usar Python no marketing?"
 
 for mensagem in st.session_state["lista_mensagens"]:
     quem_enviou = mensagem["role"]
