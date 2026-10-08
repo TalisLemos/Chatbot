@@ -24,8 +24,6 @@ if not "lista_mensagens" in st.session_state:
 mensagem_usuario = st.chat_input("Escreva sua mensagem aqui")
 
 pergunta1 = False
-pergunta2 = False
-pergunta3 = False
 
 if not st.session_state["lista_mensagens"]:
     st.markdown("""
@@ -34,22 +32,12 @@ if not st.session_state["lista_mensagens"]:
     Faça uma pergunta para começar a conversa.
     """)
 
-    col1, col2 = st.columns(2)
+    col1 = st.columns(1)
 
     with col1:
-        pergunta1 = st.button("O que é CRM?")
-        pergunta2 = st.button("Como funciona a automação de marketing?")
-
-    with col2:
-        pergunta3 = st.button("Como o Python pode ser usado no marketing?")
+        pergunta1 = st.button("Como o Python pode ser usado no marketing?")
         
 if pergunta1:
-    mensagem_usuario = "O que é CRM?"
-
-elif pergunta2:
-    mensagem_usuario = "Como funciona a automação de marketing?"
-
-elif pergunta3:
     mensagem_usuario = "Como o Python pode ser usado no marketing?"
 
 
