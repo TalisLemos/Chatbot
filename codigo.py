@@ -25,7 +25,7 @@ automação, CRM e análise de dados.
 
 
 st.title("Chatbot Inteligente")
-st.write("Chatbot com IA em tempo real, criado em Python e Streamlit por Talita Lemos.")
+st.write("Chatbot com IA em tempo real, criado em Python e Streamlit.")
 
 # criar historico de mensagems
 if not "lista_mensagens" in st.session_state:
