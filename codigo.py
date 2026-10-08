@@ -14,11 +14,24 @@ from openai import OpenAI
 modelo_ia = OpenAI(api_key=st.secrets["GEMINI_API_KEY"],
                    base_url="https://generativelanguage.googleapis.com/v1beta/openai")
 
-st.write("## ChatBot de IA")
+st.title("Assistente Virtual com IA")
+st.write("Converse com um assistente desenvolvido em Python e inteligência artificial.")
 
 # criar historico de mensagems
 if not "lista_mensagens" in st.session_state:
     st.session_state["lista_mensagens"] = []
+
+if not st.session_state["lista_mensagens"]:
+    st.markdown("""
+    **Olá! 👋**
+
+    Faça uma pergunta para começar a conversa.
+
+    Você pode perguntar, por exemplo:
+    - O que é CRM?
+    - Como funciona a automação de marketing?
+    - Como o Python pode ser utilizado no marketing?
+    """)
 
 
 mensagem_usuario = st.chat_input("Escreva sua mensagem aqui")
