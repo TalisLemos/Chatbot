@@ -69,6 +69,7 @@ if mensagem_usuario:
     st.session_state["lista_mensagens"].append(mensagem1)
 
     # pegar a resposta da IA
+with st.spinner("O assistente está pensando..."):
     resposta_modelo = modelo_ia.chat.completions.create(
         messages=st.session_state["lista_mensagens"],
         model="gemini-flash-lite-latest"
