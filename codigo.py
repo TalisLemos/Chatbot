@@ -12,19 +12,17 @@ import streamlit as st
 from openai import OpenAI
 
 
-# Estilo OpenAI (e compatíveis): o system entra como primeira mensagem
-messages = [{"role": "system", "content": SYSTEM_PROMPT}] + st.session_state.messages
+SYSTEM_PROMPT = """
+Você é um assistente especializado em explicar como Python pode ser aplicado ao marketing,
+automação, CRM e análise de dados.
+"""
 
-# Estilo Anthropic: o system é um parâmetro separado
-response = client.messages.create(
-    model="...",
-    system=SYSTEM_PROMPT,
-    messages=st.session_state.messages,
-    max_tokens=400,
+resposta_modelo = modelo_ia.chat.completions.create(
+    messages=[
+        {"role": "system", "content": SYSTEM_PROMPT}
+    ] + st.session_state["lista_mensagens"],
+    model="gemini-flash-lite-latest"
 )
-
-modelo_ia = OpenAI(api_key=st.secrets["GEMINI_API_KEY"],
-                   base_url="https://generativelanguage.googleapis.com/v1beta/openai")
 
 st.title("Chatbot Inteligente")
 st.write("Chatbot com IA em tempo real, criado em Python e Streamlit por Talita Lemos.")
