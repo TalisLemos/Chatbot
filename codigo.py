@@ -26,12 +26,25 @@ if not st.session_state["lista_mensagens"]:
     **Olá! 👋**
 
     Faça uma pergunta para começar a conversa.
-
-    Você pode perguntar, por exemplo:
-    - O que é CRM?
-    - Como funciona a automação de marketing?
-    - Como o Python pode ser utilizado no marketing?
     """)
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        pergunta1 = st.button("O que é CRM?")
+        pergunta2 = st.button("Como funciona a automação de marketing?")
+
+    with col2:
+        pergunta3 = st.button("Como o Python pode ser usado no marketing?")
+
+if pergunta1:
+    mensagem_usuario = "O que é CRM?"
+
+elif pergunta2:
+    mensagem_usuario = "Como funciona a automação de marketing?"
+
+elif pergunta3:
+    mensagem_usuario = "Como o Python pode ser usado no marketing?"
 
 
 mensagem_usuario = st.chat_input("Escreva sua mensagem aqui")
