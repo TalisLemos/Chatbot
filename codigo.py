@@ -119,8 +119,9 @@ if mensagem_usuario:
 
 # Rodape
 st.caption(
-    "Demo de portfólio por Talita Lemos · Respostas geradas por IA "
-    "podem conter imprecisões · [LinkedIn](https://www.linkedin.com/in/talitalemos/)"
+'''Demo de portfólio por Talita Lemos · [LinkedIn](https://www.linkedin.com/in/talitalemos/)
+
+Respostas geradas por IA podem conter imprecisões· '''
 )
 
 
