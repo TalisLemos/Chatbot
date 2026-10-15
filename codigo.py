@@ -121,7 +121,7 @@ if mensagem_usuario:
 st.caption(
 '''Demo de portfólio por Talita Lemos · [LinkedIn](https://www.linkedin.com/in/talitalemos/)
 
-Respostas geradas por IA podem conter imprecisões· '''
+Respostas geradas por IA podem conter imprecisões'''
 )
 
 
